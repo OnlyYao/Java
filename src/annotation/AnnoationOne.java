@@ -13,12 +13,12 @@ import java.lang.annotation.Target;
  * 没有元素的注解称为标记注解
  * 
  * 以下四个元注解是用来创建注解的：
- * 1、@Target 用来定义你的注解将应用到什么地方
+ * 1、@Target 用来定义你的注解将应用到什么地方(字段、方法、类还是接口)
  * 2、@Retention 用来定义注解在哪个级别可用，在源代码中(SOURCE)、类文件中(CLASS)、运行时(RUNTIME)
  * 3、@Document 将此注解包含在Javadoc中
  * 4、@Inherited 允许子类继承父类中的注解
  * 
- * 如果定义了一个空的注解，那么默认它会有一个value的属性
+ * 如果只有一种属性，且名为value，则赋值时可以不指定属性名。
  */
 
 @Target(ElementType.FIELD)

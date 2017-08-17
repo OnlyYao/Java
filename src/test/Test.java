@@ -1,31 +1,43 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+public enum Test {
 
-public class Test {
+	SPRING(1, "spring"),
+
+	SUMMER(2, "hot");
+	
+	private int id;
+
+	private String name;
+
+	private Test(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+	public static void getInfo() {
+		System.out.println("do something!");
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public static void main(String[] args) {
-		List<Integer> integers = new ArrayList<>();
-		for (int i = 0; i <= 10000000; i++) {
-			integers.add(i);
-		}
-		
-		long start = System.currentTimeMillis();
-		for (Iterator<Integer> integer = integers.iterator(); integer.hasNext();) {
-			System.out.println(integer.next());
-		}
-		System.out.println("----------");
-		long end = System.currentTimeMillis();
-		System.out.println(end - start);
-		
-		long starts = System.currentTimeMillis();
-		for (Integer integer : integers) {
-			System.err.println(integer);
-		}
-		System.out.println("----------");
-		long ends = System.currentTimeMillis();
-		System.out.println(ends - starts);
+		String x = Test.SPRING.getName();
+		System.out.println(x + " " + Test.SUMMER.getId());
+		Test.getInfo();
 	}
 }
