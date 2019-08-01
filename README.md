@@ -14,5 +14,22 @@ Java基础知识的学习，包含了Java注解、集合、枚举、泛型、线
 - type key，判断key的数据类型
 
 ### 字符串类型
+- set key value，设置键值，不管key存不存在都会，其中value值不能大于512M
+- setnx key value，key不存在，才设置
+- set key value xx，key存在，才设置
+- get key
+- mget key [key..]，批量获取value
+- mset key value [key value...]，批量设置value
+- del key，删除key
+- strlen，返回key的长度
+- incr key，自增1，如果key不存在，自增后key=1
+- decr key，自减1，如果key不存在，自减后key=-1
+- incrby key k，自增k，如果key不存在，自增后key=k
+- decrby key k，自减k，如果key不存在，自减后key=-k
 
+- 使用场景
+  - 缓存
+  - 计数器
+  - 分布式锁
+  - 等等
 
